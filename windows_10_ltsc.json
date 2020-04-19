@@ -5,12 +5,32 @@
       "output_directory": "./output-win10-base/",
       "vm_name": "win10-base",
       "vboxmanage": [
-        [ "modifyvm", "{{.Name}}", "--natpf1", "guest_winrm,tcp,,55985,,5985" ],
-        [ "modifyvm", "{{.Name}}", "--memory", "4096" ],
-        [ "modifyvm", "{{.Name}}", "--vram", "128" ],
-        [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--natpf1",
+          "guest_winrm,tcp,,55985,,5985"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "4096"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--vram",
+          "128"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
       ],
-      "guest_additions_mode" : "disable",
+      "guest_additions_mode": "disable",
       "headless": true,
       "guest_os_type": "Windows10_64",
       "iso_url": "{{ user `iso_url` }}",
@@ -22,6 +42,28 @@
       "winrm_timeout": "8h",
       "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
       "shutdown_timeout": "15m",
+      "floppy_files": [
+        "answer_files/10/Autounattend.xml",
+        "./scripts/bootstrap.ps1",
+        "./scripts/oracle.cer",
+        "./scripts/unattend.xml"
+      ]
+    },
+    {
+      "type": "hyperv-iso",
+      "guest_additions_mode": "disable",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "md5",
+      "memory": 2048,
+      "vm_name": "2016min",
+      "communicator": "winrm",
+      "winrm_username": "vagrant",
+      "winrm_password": "vagrant",
+      "winrm_timeout": "12h",
+      "shutdown_command": "shutdown /s /t 10 /f /d p:4:1 /c \"Packer Shutdown\"",
+      "shutdown_timeout": "15m",
+      "switch_name": "internal_switch",
       "floppy_files": [
         "answer_files/10/Autounattend.xml",
         "./scripts/bootstrap.ps1",

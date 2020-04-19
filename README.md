@@ -44,13 +44,22 @@ git clone https://github.com/urskog84/packer-templates.git; cd packer-templates
 
 ### Create a box
 
-Create a Windows 10 box:   
+Create a Windows 10 box:
 
 ```bash
-packer build --force virtualbox_windows_10_tscl.json
+# For Virtualbox 
+packer build -only=virtualbox-iso windows_10_tscl.json
+
+# For Hyper-V
+packer build -only=hyperv-iso windows_10_ltsc.json
 ```
 
 ### Add box to (local) Vagrant
+
 ```bash
+# For Virtualbox
 vagrant box add --name win_10_ltsc windows_10_virtualbox_ltsc.box
+
+# For Hyper-V
+vagrant box add --name win_10_ltsc windows_10_hyperv_ltsc.box
 ```
