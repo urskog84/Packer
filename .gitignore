@@ -1,0 +1,10 @@
+.idea
+*~
+output*
+packer_cachepacker-para*
+packer_cache
+*.box
+packer*
+.DS_Store
+.vagrant
+templates/parallels_windows_server_2016_4.vagrantcloud.json
