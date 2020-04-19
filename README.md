@@ -51,4 +51,6 @@ packer build --force virtualbox_windows_10_tscl.json
 ```
 
 ### Add box to (local) Vagrant
+```bash
 vagrant box add --name win_10_ltsc windows_10_virtualbox_ltsc.box
+```
