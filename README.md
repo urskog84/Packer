@@ -11,19 +11,19 @@ It is inspired by
 ## How to
 
 ### Prerequisites
-The Windows boxes are created with Packer version 1.5.1 and are using WinRM.
+The Windows boxes are created with Packer version 1.5.5 and are using WinRM.
 [Vagrant](https://www.vagrantup.com), [Packer](https://www.packer.io) and Virtualbox.
 
 **Linux:**
 Install them with your package provider or manually, for example like so:
 
 ```bash
-wget https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_linux_amd64.zip
-unzip vagrant_2.2.6_linux_amd64.zip
+wget https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip
+unzip vagrant_2.2.7_linux_amd64.zip
 sudo mv vagrant /usr/local/bin
 
-wget https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip
-unzip packer_1.5.1_linux_amd64.zip
+wget https://releases.hashicorp.com/packer/1.5.5/packer_1.5.5_linux_amd64.zip
+unzip packer_1.5.5_linux_amd64.zip
 sudo mv packer /usr/local/bin
 ```
 
